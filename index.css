@@ -150,14 +150,24 @@ body {
 .repo-item{
   padding: 8px;
   margin-bottom: 6px;
-  width: 300px;
-  max-width: 300px;
+  width: 320px;
+  max-width: 320px;
   border: 1px solid black;
+  border-radius: 4px;
 }
 
 .repo-item .title{
   padding-bottom: 6px;
+  margin: 0;
   font-size: 2rem;
+}
+
+.repo-item a{
+  margin-bottom: 10px;
+}
+
+.repo-item p{
+  padding: 6px 0;
 }
 
 .repos-card h4{

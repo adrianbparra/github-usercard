@@ -180,7 +180,7 @@ data:
 */
 const entryUser = document.querySelector(".cards");
 
-apiUserDataCreate("https://api.github.com/users/adrianbparra");
+// apiUserDataCreate("https://api.github.com/users/adrianbparra");
 
 
 /* Step 5: Now that you have your own card getting added to the DOM, either 
@@ -196,10 +196,12 @@ apiUserDataCreate("https://api.github.com/users/adrianbparra");
 const followersArray = ["https://api.github.com/users/tetondan", "https://api.github.com/users/JRodDvlpr", "https://api.github.com/users/aanderson9313", "https://api.github.com/users/banksleisha", "https://api.github.com/users/jeffreywhitaker"];
 
 
-// followersArray.map(follower =>{
-//   apiUserDataCreate(follower);
-//   // entryUser.appendChild(createCard())
-// })
+followersArray.map(follower =>{
+  apiUserDataCreate(follower);
+})
+
+
+
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
 
@@ -302,16 +304,18 @@ function createCard(data, repos){
   });
 
 
-  for(let i = 0; i < 5; i++){
+  for(let i = 0; i < 6; i++){
     //declare variables
     const repoCard = document.createElement("div");
     const repoName = document.createElement("h3");
     const repoUrl = document.createElement("a");
     const repoForks = document.createElement("p");
+    const repoDesc = document.createElement("p");
 
     repoCard.appendChild(repoName);
     repoCard.appendChild(repoUrl);
     repoCard.appendChild(repoForks);
+    repoCard.appendChild(repoDesc);
 
     repoCard.classList.add("repo-item");
     repoName.classList.add("title");
@@ -320,7 +324,7 @@ function createCard(data, repos){
     repoUrl.href = repos[i].html_url;
     repoUrl.textContent = repos[i].html_url;
     repoForks.textContent = `Forks: ${repos[i].forks}`;
-
+    repoDesc.textContent = `Description: ${repos[i].description}`
     repositories.appendChild(repoCard);
     
   }
@@ -339,7 +343,7 @@ function createCard(data, repos){
   followingCard.textContent = `Following: ${data.following}`;
   bioCard.textContent = data.bio;
   //repos content
-  reposexpand.textContent = "Show Top Forked Repos";
+  reposexpand.textContent = "Show Top 6 Forked Repos";
   repoClose.textContent = "Close";
 
   return card;
@@ -361,6 +365,7 @@ const fake5repos = [
     html_url: "https://github.com/adrianbparra/BonzersVideoGame",
     language: "CSS",
     forks: 12,
+    description: "I created a cool game"
   },
   {
     name : "Bon Game",
