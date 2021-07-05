@@ -95,6 +95,7 @@ body {
   width: 100%;
   padding: 20px;
   display: flex;
+  flex-wrap: wrap;
   border-radius: 5px;
   box-shadow: 0 1px 6px -2px #000;
   background-color: #FFF;
@@ -106,6 +107,74 @@ body {
   height: 150px;
   border-radius: 3px;
   margin-right: 20px;
+  flex: 0 1 25%;
+}
+
+.card .card-info{
+  /* display: inline-block; */
+  /* width: 100%; */
+  flex: 0 2 70%;
+}
+
+.card .repos-card{
+  flex: 0 2 100%;
+  padding-top: 2px;
+  height: 14px;
+  overflow: hidden;
+  transition: height 1s;
+}
+
+.repos-card h3{
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.card .repos-expanded{
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  height: auto;
+}
+
+.repos-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 2px;
+}
+
+.repo-item{
+  padding: 8px;
+  margin-bottom: 6px;
+  width: 320px;
+  max-width: 320px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.repo-item .title{
+  padding-bottom: 6px;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.repo-item a{
+  margin-bottom: 10px;
+}
+
+.repo-item p{
+  padding: 6px 0;
+}
+
+.repos-card h4{
+  flex: 1 2 100%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  text-align: center;
 }
 
 .card .name {
